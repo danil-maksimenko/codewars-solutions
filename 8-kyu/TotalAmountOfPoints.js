@@ -18,16 +18,26 @@
 // 0 <= y <= 4
 
 function points(games) {
-  let team = 0;
+  // let team = 0;
 
-  for (const game of games) {
+  // for (const game of games) {
+  //   [x, y] = game.split(":").map(Number);
+  //   if (x > y) {
+  //     team += 3;
+  //   } else if (x === y) {
+  //     team += 1;
+  //   }
+  // }
+
+  // return team;
+
+  return games.reduce((total, game) => {
     [x, y] = game.split(":").map(Number);
     if (x > y) {
-      team += 3;
+      total += 3;
     } else if (x === y) {
-      team += 1;
+      total += 1;
     }
-  }
-
-  return team;
+    return total;
+  }, 0);
 }
