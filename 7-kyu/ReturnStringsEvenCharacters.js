@@ -10,9 +10,16 @@ function evenChars(string) {
     return "invalid string";
   }
 
-  let res = [];
-  for (let i = 1; i < string.length; i += 2) {
-    res.push(string[i]);
-  }
-  return res;
+  // let res = [];
+  // for (let i = 1; i < string.length; i += 2) {
+  //   res.push(string[i]);
+  // }
+  // return res;
+
+  return [...string].reduce((acc, char, index) => {
+    if (index % 2 === 1) {
+      acc.push(char);
+    }
+    return acc;
+  }, []);
 }
