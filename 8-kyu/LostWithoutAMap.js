@@ -6,11 +6,16 @@
 
 function maps(x) {
   // return x.map(el => el * 2);
-  const res = [];
+  // const res = [];
 
-  for (const num of x) {
-    res.push(num * 2);
-  }
+  // for (const num of x) {
+  //   res.push(num * 2);
+  // }
 
-  return res;
+  // return res;
+
+  return x.reduce((acc, el) => {
+    acc.push(el * 2);
+    return acc;
+  }, []);
 }
